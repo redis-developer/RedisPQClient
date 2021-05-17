@@ -1,0 +1,22 @@
+Parameters:
+  TableNameParameter:
+    Description: "Name of your RedisPQ app"
+    Type: "String"
+
+Resources:
+  RedisPQAppDDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: 
+        Ref: TableNameParameter
+      AttributeDefinitions:
+      - AttributeName: "priority"
+        AttributeType: "N"
+      - AttributeName: "uuid"
+        AttributeType: "S"
+      BillingMode: "PAY_PER_REQUEST"
+      KeySchema:
+      - AttributeName: "priority"
+        KeyType: "HASH"
+      - AttributeName: "uuid"
+        KeyType: "RANGE"
