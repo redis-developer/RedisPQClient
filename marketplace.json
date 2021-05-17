@@ -1,0 +1,25 @@
+{
+    "app_name": "RedisPQClient",
+    "description": "RedisPQClient is a Redis- and DynamoDB-backed priority queue client for Java.",
+    "hidden": "false",
+    "rank": "27",
+    "type": "Building Block",
+    "contributed_by": "Community",
+    "repo_url": "https://github.com/TusharRakheja/RedisPQClient",
+    "download_url": "https://github.com/TusharRakheja/RedisPQClient/archive/refs/heads/master.zip",
+    "hosted_url": "",
+    "quick_deploy": "",
+    "deploy_buttons": [],
+    "language": ["Java", "Lua"],
+    "redis_commands": ["SCRIPT LOAD", "EVALSHA", "JSON.GET", "JSON.MGET", "JSON.SET", "JSON.ARRLEN", "JSON.ARRAPPEND", "JSON.DEL"],
+    "redis_features": ["caching"],
+    "redis_modules": ["RediJSON"],
+    "app_image_urls": [
+        "https://drive.google.com/uc?id=1Niwhvw3Ocr_bb0Roszc3iJ30vi5RhMnJ",
+        "https://drive.google.com/uc?id=1pMufZHcXR5ySe_GGblMrDd1Jslxa2C3u"
+    ],
+    "youtube_url": "https://www.youtube.com/watch?v=iEpVCbWpelQ",
+    "special_tags": ["Hackathon"],
+    "verticals": ["Technology"],
+    "markdown": "https://raw.githubusercontent.com/TusharRakheja/RedisPQClient/master/README.md"
+}
