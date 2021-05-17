@@ -8,6 +8,13 @@ RedisPQClient is a [Redis](https://redis.io/)- and DynamoDB-backed priority queu
 
 ## Usage
 
+Create a DynamoDB table using the CloudFormation template:
+```
+aws cloudformation create-stack --stack-name RedisPQClientAppStack --template-body file://./cloudformation.yml --parameters ParameterKey=TableNameParameter,ParameterValue=RedisPQClientAppName
+```
+
+Then, you can use the RedisPQClient as follows:
+
 ```java
 import inc.future.redispq.Prioritizable;
 import inc.future.redispq.RedisPriorityQueue;
@@ -17,7 +24,7 @@ class SamplePrioritizableItem implements Prioritizable {
 }
 
 RedisPriorityQueue redisPriorityQueue = new RedisPriorityQueue(
-    APP_NAME, AWS_CREDENTIALS_PROVIDER, REGION, REDIS_HOSTNAME, [PORT], [PASSWORD]
+    "RedisPQClientAppName", AWS_CREDENTIALS_PROVIDER, REGION, REDIS_HOSTNAME, [PORT], [PASSWORD]
 );   // The APP_NAME should be the same as that used for the DynamoDB table.
 
 redisPriorityQueue.add(new SamplePrioritizableItem(100L, "UUID-1", "PAYLOAD-1"));
