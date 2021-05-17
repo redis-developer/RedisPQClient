@@ -20,17 +20,17 @@ RedisPriorityQueue redisPriorityQueue = new RedisPriorityQueue(
     APP_NAME, AWS_CREDENTIALS_PROVIDER, REGION, REDIS_HOSTNAME, [PORT], [PASSWORD]
 );   // The APP_NAME should be the same as that used for the DynamoDB table.
 
-redisPriorityQueue.add(new SamplePrioritizableItem(1L, "UUID-1", "PAYLOAD-1"));
-redisPriorityQueue.add(new SamplePrioritizableItem(10L, "UUID-2", "PAYLOAD-2"));
-redisPriorityQueue.add(new SamplePrioritizableItem(100L, "UUID-3", "PAYLOAD-3"));
-redisPriorityQueue.add(new SamplePrioritizableItem(100L, "UUID-4", "PAYLOAD-4"));
+redisPriorityQueue.add(new SamplePrioritizableItem(100L, "UUID-1", "PAYLOAD-1"));
+redisPriorityQueue.add(new SamplePrioritizableItem(100L, "UUID-2", "PAYLOAD-2"));
+redisPriorityQueue.add(new SamplePrioritizableItem(1000L, "UUID-3", "PAYLOAD-3"));
+redisPriorityQueue.add(new SamplePrioritizableItem(10L, "UUID-4", "PAYLOAD-4"));
+redisPriorityQueue.add(new SamplePrioritizableItem(10000L, "UUID-5", "PAYLOAD-5"));
+redisPriorityQueue.add(new SamplePrioritizableItem(10000L, "UUID-6", "PAYLOAD-6"));
 
-System.out.println(redisPriorityQueue.peek());  // Will print the item with either UUID-3 or UUID-4, without removing them from the queue.
-for (int i = 0; i < 4; i++) {
-    System.out.println(redisPriorityQueue.poll());  // Will print items in the order UUID-3/UUID-4, UUID-2, UUID-1
+System.out.println(redisPriorityQueue.peek().toString());  // Will print the item with either UUID-5 or UUID-6, without removing them from the queue.
+for (int i = 0; i < 6; i++) {
+    System.out.println(redisPriorityQueue.poll().toString());  // Will print items in the order UUID-5/UUID-6, UUID-3, UUID-1/UUID-2, and UUID-4
 }
-
-// any more peek() or poll() calls after this will return null.
 ```
 
 ## How it works
@@ -49,5 +49,5 @@ For example, consider the workflow below, where a user adds 4 items via a RedisP
 
 When the user wants to poll from the queue, the RedisPQClient polls the highest priority value from the Redis max-heap, and queries DynamoDB with the polled value as hash-key. The query only gets a single-item, and that item is returned by RedisPQClient. If multiple items were added with the same priority, there's no guarantee for the order in which those items will be polled. 
 
-For a more in-depth look into the working of RedisPQClient, please watch this YouTube vide: *<to be added>*
+For a more in-depth look into the working of RedisPQClient, please watch this YouTube vide: [RedisPQClient - RedisConf 2021 Hackathon](https://www.youtube.com/watch?v=iEpVCbWpelQ)
 
