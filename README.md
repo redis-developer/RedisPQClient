@@ -1,1 +1,1 @@
-# Redis Priority Queue Client &nbsp;[![Build Status](https://travis-ci.com/TusharRakheja/RedisPQClient.svg?token=fR4XuYaAsB9g28zYEjyB&branch=master)](https://travis-ci.com/TusharRakheja/RedisPQClient)
+# Redis Priority Queue Client &nbsp;[![Build Status](https://travis-ci.com/TusharRakheja/RedisPQClient.svg?branch=master)](https://travis-ci.com/TusharRakheja/RedisPQClient)
