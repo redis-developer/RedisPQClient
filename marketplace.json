@@ -1,7 +1,7 @@
 {
     "app_name": "RedisPQClient",
     "description": "RedisPQClient is a Redis- and DynamoDB-backed priority queue client for Java.",
-    "hidden": "false",
+    "hidden": "true",
     "rank": "27",
     "type": "Building Block",
     "contributed_by": "Community",
