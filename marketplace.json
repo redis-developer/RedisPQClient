@@ -7,7 +7,7 @@
    "preview_image_url": "https://raw.githubusercontent.com/redis-developer/RedisPQClient/master/images/app_preview_image.png",
    "download_url": "https://github.com/redis-developer/RedisPQClient/archive/refs/heads/master.zip",
    "hosted_url": "",
-   "quick_deploy": "",
+   "quick_deploy": "false",
    "deploy_buttons": [],
    "language": ["Java", "Lua"],
    "redis_commands": ["SCRIPT LOAD", "EVALSHA", "JSON.GET", "JSON.MGET", "JSON.SET", "JSON.ARRLEN", "JSON.ARRAPPEND", "JSON.DEL"],
