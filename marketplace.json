@@ -4,7 +4,7 @@
    "type": "Building Block",
    "contributed_by": "Community",
    "repo_url": "https://github.com/redis-developer/RedisPQClient",
-   "preview_image_url": "https://raw.githubusercontent.com/redis-developer/RedisPQClient/master/images/app_preview_image.png",
+   "preview_image_url": "https://raw.githubusercontent.com/redis-developer/RedisPQClient/master/app_preview_image.png",
    "download_url": "https://github.com/redis-developer/RedisPQClient/archive/refs/heads/master.zip",
    "hosted_url": "",
    "quick_deploy": "false",
