@@ -56,5 +56,5 @@ For example, consider the workflow below, where a user adds 4 items via a RedisP
 
 When the user wants to poll from the queue, the RedisPQClient polls the highest priority value from the Redis max-heap, and queries DynamoDB with the polled value as hash-key. The query only gets a single-item, and that item is returned by RedisPQClient. If multiple items were added with the same priority, there's no guarantee for the order in which those items will be polled. 
 
-For a more in-depth look into the working of RedisPQClient, please watch this YouTube video: [RedisPQClient - RedisConf 2021 Hackathon](https://www.youtube.com/watch?v=iEpVCbWpelQ)
+
 
