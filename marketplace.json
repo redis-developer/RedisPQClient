@@ -11,8 +11,8 @@
    "deploy_buttons": [],
    "language": ["Java", "Lua"],
    "redis_commands": ["SCRIPT LOAD", "EVALSHA", "JSON.GET", "JSON.MGET", "JSON.SET", "JSON.ARRLEN", "JSON.ARRAPPEND", "JSON.DEL"],
-   "redis_features": ["caching"],
-   "redis_modules": ["RediJSON"],
+   "redis_use_cases": ["caching"],
+   "redis_features": ["RediJSON"],
    "app_image_urls": [
        "https://drive.google.com/uc?id=1Niwhvw3Ocr_bb0Roszc3iJ30vi5RhMnJ",
        "https://drive.google.com/uc?id=1pMufZHcXR5ySe_GGblMrDd1Jslxa2C3u"
