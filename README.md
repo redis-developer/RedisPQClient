@@ -3,7 +3,7 @@
 RedisPQClient is a [Redis](https://redis.io/)- and DynamoDB-backed priority queue client for Java. It supports standard priority queue operations such as `add`, `poll` and `peek`, and can be used for purposes like job-scheduling, request processing etc.
 
 ## Prerequisites
-- A Redis instance with the [RedisJSON](https://github.com/RedisJSON/RedisJSON/) module loaded.
+- A Redis instance with the [Redis JSON](https://github.com/Redis JSON/Redis JSON/) module loaded.
 - A DynamoDB table with a hash-key of type N called `priority`, and a range-key of type S called `uuid`.
 
 ## Usage
@@ -42,7 +42,7 @@ for (int i = 0; i < 6; i++) {
 
 ## How it works
 
-RedisPQClient client works by keeping track of the highest priority value in Redis via a max-heap, as well as how many items with a given priority it has seen. The full-items, with attributes other than `priority`, such as `uuid` and `payload`, are stored in DynamoDB for durability, with `priority` as the hash-key and `uuid` of the item as range-key. 
+RedisPQClient client works by keeping track of the highest priority value in Redis via a max-heap, as well as how many items with a given priority it has seen. The full-items, with attributes other than `priority`, such as `uuid` and `payload`, are stored in DynamoDB for durability, with `priority` as the hash-key and `uuid` of the item as range-key.
 
 To maintain the max-heap in Redis, RedisPQClient uses Lua scripts from the [RedisPQScripts](https://github.com/TusharRakheja/RedisPQScripts) package. The scripts are cached server-side on Redis when the client is initialized, and used to add and remove items from the heap.
 
@@ -54,7 +54,4 @@ For example, consider the workflow below, where a user adds 4 items via a RedisP
 
 ### Polling from the queue
 
-When the user wants to poll from the queue, the RedisPQClient polls the highest priority value from the Redis max-heap, and queries DynamoDB with the polled value as hash-key. The query only gets a single-item, and that item is returned by RedisPQClient. If multiple items were added with the same priority, there's no guarantee for the order in which those items will be polled. 
-
-
-
+When the user wants to poll from the queue, the RedisPQClient polls the highest priority value from the Redis max-heap, and queries DynamoDB with the polled value as hash-key. The query only gets a single-item, and that item is returned by RedisPQClient. If multiple items were added with the same priority, there's no guarantee for the order in which those items will be polled.
